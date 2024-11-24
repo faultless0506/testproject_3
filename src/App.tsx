@@ -1,9 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Authorization from "./pages/Authorization/Authorization";
+import Gallery from "./pages/Gallery/Gallery";
+import "./styles/index.scss";
 
-function App() {
-
+function App(): JSX.Element {
   return (
     <>
-      <h1>App</h1>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Authorization />}></Route>
+          <Route path="/gallery" element={<Gallery />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
